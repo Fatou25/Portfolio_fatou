@@ -2,232 +2,354 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fatoumata DIALLO - Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #1c0033, #2c003f);
-      color: white;
-    }
-
-    header nav {
-      background-color: #000010;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 2rem 2rem; /* réduit l'espace vertical */
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    #hero {
-      padding-bottom: 2rem; /* réduit l'espace sous le bloc hero */
-    }
-
-    #hero h1 {
-      font-size: 2.8rem;
-    }
-
-    #hero span {
-      color: #ffffff;
-      font-weight: bold;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .card {
-      background-color: #0f0f1f;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #444;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #0b0b1d;
-      color: #aaa;
-    }
-
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: #0078ff;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .card i {
-      color: #00bfff;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#courses">Courses</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="site-header">
+  <!-- Photo -->
+  <img src="photo.png" alt="Photo Fatoumata Diallo" class="corner-photo">
 
-  <section id="hero">
-    <h1>Hello 👋, I'm <span>Fatoumata DIALLO</span></h1>
-    <h2>I am finishing a Master's degree in <strong>Computer Science – Data Science</strong>, with a final internship at <strong>Framatome</strong> as a <strong>Data Analyst</strong>.</h2>
-    <h2>I will be available in <strong>October</strong> for a full-time position.</p>
-    <h2>I love turning <strong>data</strong> into <strong>smart decisions</strong> — from <strong>collection</strong> to <strong>visualization</strong>, from <strong>pipelines</strong> to <strong>predictions</strong>.</h2>
+  <!-- Coordonnées -->
+<div class="header-info">
+  <!-- Version FR -->
+  <div class="lang fr">
+    <p><strong>Email : </strong> <a href="mailto:fatoumatadiallo63@gmail.com">fatoumatadiallo63@gmail.com</a></p>
+    <p><strong>Téléphone : </strong> <a href="tel:+33753687785">07 53 68 77 85</a></p>
+    <p><strong>Adresse : </strong> Seclin, France</p>
+  </div>
+
+  <!-- Version EN -->
+  <div class="lang en">
+    <p><strong>Email:</strong> <a href="mailto:fatoumatadiallo63@gmail.com">fatoumatadiallo63@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+33753687785">+33 7 53 68 77 85</a></p>
+    <p><strong>Address:</strong> Seclin, France</p>
+  </div>
+</div>
+
+
+  <!-- Menu -->
+  <nav class="main-nav">
+    <ul class="lang fr">
+      <li><a href="#education">Formation</a></li>
+      <li><a href="#experience">Expériences</a></li>
+      <li><a href="#academic-projects">Projets</a></li>
+      <li><a href="#courses">Cours</a></li>
+      <li><a href="#certificats">Certificats</a></li>
+    </ul>
+    <ul class="lang en">
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#academic-projects">Projects</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#certificats">Certificates</a></li>
+    </ul>
+  </nav>
+
+  <!-- Liens sociaux + langue -->
+  <div class="header-actions">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/fatoumata-diallo-196830218/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Fatou25?tab=repositories" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div id="lang-switch">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="fr">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="hero" class="hero-wrap">
+    <h2 class="lang en">
+      Hello 👋, I'm Fatoumata DIALLO.
+      I have just finished a Master's in Computer Science – Data Science, with a final internship at Framatome as a Data Analyst.
+      I am <strong>available immediately</strong> for a full-time position (CDD or CDI) as a Data Engineer, Data Analyst, or Data Scientist.
+      I love turning data into smart decisions — from collection to visualization, from pipelines to predictions.
+    </h2>
+
+    <h2 class="lang fr">
+      Bonjour 👋, je suis Fatoumata DIALLO.
+      J’ai terminé un Master en Informatique – Science des données, avec un stage final chez Framatome en tant que Data Analyst.
+      Je suis <strong>disponible dès maintenant</strong> pour un poste à temps plein (CDD ou CDI) en tant que Data Engineer, Data Analyst ou Data Scientist.
+      J’adore transformer les données en décisions intelligentes — de la collecte à la visualisation, des pipelines aux prédictions.
+    </h2>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
-    <h2>My Data Workflow & Skills</h2>
+    <h2 class="lang en">My Data Workflow & Skills</h2>
+    <h2 class="lang fr">Mon workflow & compétences data</h2>
+
     <div class="grid">
       <div class="card">
-        <h3><i class="fas fa-database"></i> Data Collection</h3>
-        <p>I connect to various data sources like SQL databases, spreadsheets, and APIs to extract raw data from diverse systems.</p>
-        <p><strong>SQL, PostgreSQL, MongoDB, Excel, AirTable, ETL/ELT</strong></p>
+        <h3 class="lang en">Data Collection</h3>
+        <h3 class="lang fr">Collecte de données</h3>
+        <p class="lang en">I connect to various sources (SQL databases, spreadsheets, APIs) to extract raw data from diverse systems.</p>
+        <p class="lang fr">Connexion à diverses sources (bases SQL, tableurs, APIs) pour extraire des données brutes hétérogènes.</p>
+        <p class="lang en"><strong>SQL, PostgreSQL, MongoDB, Excel, Airtable, ETL/ELT</strong></p>
+        <p class="lang fr"><strong>SQL, PostgreSQL, MongoDB, Excel, Airtable, ETL/ELT</strong></p>
       </div>
+
       <div class="card">
-        <h3><i class="fas fa-broom"></i> Cleaning & Preprocessing</h3>
-        <p>I prepare clean, usable datasets through cleaning (handling NA, duplicates), formatting, and filtering.</p>
-        <p><strong>Python (pandas, numpy), R, VBA</strong></p>
+        <h3 class="lang en">Cleaning & Preprocessing</h3>
+        <h3 class="lang fr">Nettoyage & prétraitement</h3>
+        <p class="lang en">I prepare clean datasets: handling missing values & duplicates, formatting, filtering.</p>
+        <p class="lang fr">Préparation de jeux propres : gestion des valeurs manquantes & doublons, formatage, filtrage.</p>
+        <p class="lang en"><strong>Python (pandas, numpy), R, VBA</strong></p>
+        <p class="lang fr"><strong>Python (pandas, numpy), R, VBA</strong></p>
       </div>
+
       <div class="card">
-        <h3><i class="fas fa-chart-bar"></i> Statistical Analysis</h3>
-        <p>I analyze data using descriptive stats, correlations, and domain knowledge to uncover insights and trends.</p>
-        <p><strong>Python, R, Excel, probability, basic stats</strong></p>
+        <h3 class="lang en">Statistical Analysis</h3>
+        <h3 class="lang fr">Analyse statistique</h3>
+        <p class="lang en">Descriptive stats, correlations, and domain insights to uncover trends.</p>
+        <p class="lang fr">Statistiques descriptives, corrélations et expertise métier pour révéler les tendances.</p>
+        <p class="lang en"><strong>Python, R, Excel, probability, basic stats</strong></p>
+        <p class="lang fr"><strong>Python, R, Excel, probabilités, stats de base</strong></p>
       </div>
+
       <div class="card">
-        <h3><i class="fas fa-chart-pie"></i> Data Visualization</h3>
-        <p>I create visual dashboards and reports to communicate findings and support decision-making clearly.</p>
-        <p><strong>Power BI, Python, Tableau, Excel</strong></p>
+        <h3 class="lang en">Data Visualization</h3>
+        <h3 class="lang fr">Visualisation</h3>
+        <p class="lang en">Dashboards and reports that make insights actionable and clear.</p>
+        <p class="lang fr">Tableaux de bord et rapports pour des insights actionnables et clairs.</p>
+        <p class="lang en"><strong>Power BI, Python, Tableau, Excel</strong></p>
+        <p class="lang fr"><strong>Power BI, Python, Tableau, Excel</strong></p>
       </div>
+
       <div class="card">
-        <h3><i class="fas fa-brain"></i> Prediction & Modeling</h3>
-        <p>I build and test machine learning models to forecast outcomes and provide data-driven recommendations.</p>
-        <p><strong>scikit-learn, NLP, supervised/unsupervised learning</strong></p>
+        <h3 class="lang en">Prediction & Modeling</h3>
+        <h3 class="lang fr">Prédiction & modélisation</h3>
+        <p class="lang en">Build and evaluate ML models to forecast outcomes and support decisions.</p>
+        <p class="lang fr">Construction et évaluation de modèles ML pour anticiper et décider.</p>
+        <p class="lang en"><strong>scikit-learn, NLP, supervised/unsupervised learning</strong></p>
+        <p class="lang fr"><strong>scikit-learn, NLP, apprentissage supervisé/non supervisé</strong></p>
       </div>
+
       <div class="card">
-        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
-        <p><strong>Languages:</strong> Python, R, SQL, VBA<br>
-           <strong>BI & Viz:</strong> Power BI, Tableau, Excel<br>
-           <strong>ETL/ELT & Others:</strong> Talend, APIs, Git</p>
+        <h3 class="lang en">Tools & Technologies</h3>
+        <h3 class="lang fr">Outils & technologies</h3>
+        <p class="lang en">
+          <strong>Languages:</strong> Python, R, SQL, VBA<br>
+          <strong>BI & Viz:</strong> Power BI, Tableau, Excel<br>
+          <strong>ETL/ELT & Others:</strong> Talend, APIs, Git
+        </p>
+        <p class="lang fr">
+          <strong>Langages :</strong> Python, R, SQL, VBA<br>
+          <strong>BI & Viz :</strong> Power BI, Tableau, Excel<br>
+          <strong>ETL/ELT & Divers :</strong> Talend, APIs, Git
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2 class="lang fr">Formation</h2>
+    <h2 class="lang en">Education</h2>
+
     <div class="grid">
       <div class="card">
-        <h3>👩‍💻 Short Bio</h3>
-        <p>Master's in Data Science at University of Caen. Internship at Framatome CRC : data cleaning, dashboards, automation pipelines. Support for hot rolling operations.</p>
+        <p class="lang fr">Master 2 – Algorithmiques et Systèmes Intelligents (Science des données) – Université de Caen Normandie</p>
+        <p class="lang en">Master’s – Algorithmics and Intelligent Systems (Data Science) – University of Caen Normandy</p>
       </div>
       <div class="card">
-        <h3>🎓 Education & Experience</h3>
-        <p>
-          • Mar–Sep 2025: Data Analyst Intern – Framatome CRC (Ugine)<br>
-          • Nov 2024: Student Project – AgriGaston<br>
-          • 2023–2025: Master 2 – Computer Science, Data Science – University of Caen<br>
-          • 2021–2023: Bachelor's – Computer Science – University of Caen<br>
+        <p class="lang fr">Licence Informatique – Université de Caen Normandie</p>
+        <p class="lang en">Bachelor’s – Computer Science – University of Caen Normandy</p>
+      </div>
+      <div class="card">
+        <p class="lang fr">Licence MIAGE – Université Kofi Annan de Guinée</p>
+        <p class="lang en">Bachelor’s – MIAGE – Kofi Annan University of Guinea</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2 class="lang fr">Expériences professionnelles</h2>
+    <h2 class="lang en">Professional Experience</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3 class="lang fr">Stage de fin d’études – Data Analyst – Framatome CRC Ugine</h3>
+        <h3 class="lang en">Final Internship – Data Analyst – Framatome CRC Ugine</h3>
+        <p class="lang fr">
+          Collecte de données issues de capteurs (laminoirs, site de Rugles). Prétraitement, nettoyage et enrichissement pour alimenter la simulation et créer des visuels Power BI.
+          Automatisation complète de la chaîne de traitement (Python).
+        </p>
+        <p class="lang en">
+          Collected sensor data (rolling mill, Rugles site). Preprocessed, cleaned, and enriched data to feed simulations and build Power BI visuals.
+          Automated the full processing pipeline in Python.
         </p>
       </div>
+
       <div class="card">
-        <h3>🌍 Other Info</h3>
+        <h3 class="lang fr">Stage – Développement Web – AgriGaston</h3>
+        <h3 class="lang en">Internship – Web Development – AgriGaston</h3>
+        <p class="lang fr">
+          Ajout d’une carte interactive et intégration d’une liste d’avocats depuis Airtable (Nuxt.js). Collaboration avec l’équipe pour affiner l’UX et la satisfaction client.
+        </p>
+        <p class="lang en">
+          Added an interactive map and integrated a lawyer list from Airtable (Nuxt.js). Worked with the team to refine UX and ensure client satisfaction.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="lang fr">Préparatrice de commande – U-LOG IFS Normandie (Juin 2023 – Janv. 2025)</h3>
+        <h3 class="lang en">Order Picker – U-LOG IFS Normandie (June 2023 – Jan. 2025)</h3>
+        <ul class="lang fr">
+          <li>Préparation de commande</li><li>Filmage</li><li>Mise à quai</li><li>Contrôle de commande</li>
+        </ul>
+        <ul class="lang en">
+          <li>Order preparation</li><li>Pallet wrapping</li><li>Dock loading</li><li>Order control</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="lang fr">Employée polyvalente – Quick Côte de Nacre (2021 – Mai 2023)</h3>
+        <h3 class="lang en">Crew Member – Quick Côte de Nacre (2021 – May 2023)</h3>
+        <ul class="lang fr">
+          <li>Prise et préparation de commandes</li><li>Encaissement et nettoyage</li>
+        </ul>
+        <ul class="lang en">
+          <li>Order taking & preparation</li><li>Cashier duties & cleaning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC PROJECTS -->
+  <section id="academic-projects">
+    <h2 class="lang fr">Projets académiques</h2>
+    <h2 class="lang en">Academic Projects</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Analyse du genre sur Wikipédia</h3>
+        <p class="lang fr">
+          Web scraping des contributeurs, prétraitement (nettoyage, visualisation des variables), modélisation prédictive des contributions selon le genre.
+        </p>
+        <p class="lang en">
+          Web scraping of contributors, preprocessing (cleaning, feature visualization), predictive modeling of contributions by gender.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Snowman Game (RDF/OWL, SPARQL)</h3>
         <p>
-          • Nationality: Guinean<br>
-          • Mobility: All France<br>
-          • Volunteering: Roue Libre, Vélobricolade<br>
-          • Hobbies: Sports, feedback-lover, dynamic
+          Conception d’une ontologie, règles d’inférence et requêtes SPARQL pour gérer déplacements, états et fusions des boules.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Data Warehouse avec Talend</h3>
+        <p>
+          Entrepôt de données en étoile : modélisation, pipelines ETL et génération de cubes OLAP.
         </p>
       </div>
     </div>
   </section>
 
- <section id="projects">
-  <h2>Latest Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>01 – 2025 · Gender Analysis on Wikipedia</h3>
-      <p>Data collection from Wikipedia contributors (gender, location…). Preprocessing and feature analysis. Predictive modeling to estimate contribution levels by gender.</p>
-    </div>
-    <div class="card">
-      <h3>11 – 2024 · Collaborative Project with AgriGaston</h3>
-      <p>Integration of an interactive map and a dynamic list of lawyers from Airtable into the existing app. Worked closely with the dev team to refine UX and ensure client satisfaction.</p>
-    </div>
-    <div class="card">
-      <h3>11 – 2023 · Data Warehouse Creation</h3>
-      <p>Designed and implemented a star-schema data warehouse using Talend. Included data modeling, ETL pipelines, and OLAP cube generation for analysis.</p>
-    </div>
-  </div>
-</section>
+  <!-- PERSONAL PROJECTS -->
+  <section id="personal-projects">
+    <h2 class="lang fr">Projets personnels</h2>
+    <h2 class="lang en">Personal Projects</h2>
 
-<section id="courses">
-  <h2>Courses & Resources</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Statistics with R</h3>
-      <p>Descriptive and inferential statistics using R. Focus on distributions, hypothesis testing, and regression models.</p>
-      <a href="#" class="button">Download PDF</a>
+    <div class="grid">
+      <div class="card">
+        <h3>Application interactive de Data Analysis</h3>
+        <p class="lang fr">
+          R Shiny / Streamlit : import CSV/Excel, stats descriptives, visualisations (histogrammes, boxplots, corrélations),
+          modèles prédictifs (régression linéaire, random forest) avec évaluation.
+        </p>
+        <p class="lang en">
+          R Shiny / Streamlit: CSV/Excel import, descriptive stats, visualizations (histograms, boxplots, correlations),
+          predictive models (linear regression, random forest) with evaluation.
+        </p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Data Analysis in Python</h3>
-      <p>Cleaning, exploration, and visualization of data using pandas, matplotlib, and seaborn. Project-based learning with real-world datasets.</p>
-      <a href="#" class="button">Download PDF</a>
-    </div>
-    <div class="card">
-      <h3>Machine Learning & AI</h3>
-      <p>Introduction to supervised and unsupervised learning, model evaluation, and implementation with scikit-learn and TensorFlow.</p>
-      <a href="#" class="button">Download PDF</a>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- COURSES -->
+  <section id="courses">
+    <h2 class="lang en">Courses & Resources</h2>
+    <h2 class="lang fr">Cours & ressources</h2>
 
-  <footer>
-    <p>&copy; 2025 Fatoumata Diallo. All rights reserved.</p>
-  </footer>
+    <div class="grid">
+      <div class="card">
+        <h3 class="lang en">Statistics with R</h3>
+        <h3 class="lang fr">Statistiques avec R</h3>
+        <p class="lang en">Distributions, hypothesis testing, regression.</p>
+        <p class="lang fr">Distributions, tests d’hypothèses, régression.</p>
+        <a href="#" class="button lang en">Download PDF</a>
+        <a href="#" class="button lang fr">Télécharger le PDF</a>
+      </div>
+
+      <div class="card">
+        <h3 class="lang en">Data Analysis in Python</h3>
+        <h3 class="lang fr">Analyse de données en Python</h3>
+        <p class="lang en">Cleaning, exploration, visualization with pandas and matplotlib.</p>
+        <p class="lang fr">Nettoyage, exploration, visualisation avec pandas et matplotlib.</p>
+        <a href="#" class="button lang en">Download PDF</a>
+        <a href="#" class="button lang fr">Télécharger le PDF</a>
+      </div>
+
+      <div class="card">
+        <h3 class="lang en">Machine Learning & AI</h3>
+        <h3 class="lang fr">Machine Learning & IA</h3>
+        <p class="lang en">Supervised/unsupervised learning, model evaluation, scikit-learn.</p>
+        <p class="lang fr">Supervisé / non supervisé, évaluation des modèles, scikit-learn.</p>
+        <a href="#" class="button lang en">Download PDF</a>
+        <a href="#" class="button lang fr">Télécharger le PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATS -->
+  <section id="certificats">
+    <h2 class="lang fr">Certificats</h2>
+    <h2 class="lang en">Certificates</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Power BI – Data Analyst Associate</h3>
+        <p class="lang fr">Certification Microsoft (exemple). Dashboards, DAX, Modélisation.</p>
+        <p class="lang en">Microsoft certification (example). Dashboards, DAX, Modeling.</p>
+      </div>
+      <!-- ajoute ici tes vrais certificats -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="lang en">&copy; 2025 Fatoumata Diallo. All rights reserved.</p>
+  <p class="lang fr">&copy; 2025 Fatoumata Diallo. Tous droits réservés.</p>
+</footer>
+
+<script>
+  function applyLanguage(lang) {
+    document.querySelectorAll('.lang').forEach(el => {
+      el.style.display = el.classList.contains(lang) ? '' : 'none';
+    });
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('portfolioLang', lang);
+    document.querySelectorAll('#lang-switch button').forEach(btn => {
+      const active = btn.dataset.lang === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+  }
+  const saved = localStorage.getItem('portfolioLang') || 'en';
+  applyLanguage(saved);
+  document.querySelectorAll('#lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+</script>
 
 </body>
 </html>

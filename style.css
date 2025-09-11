@@ -1,0 +1,166 @@
+/* ================== Variables & base ================== */
+:root{
+  --bg1:#1c0033; --bg2:#2c003f;
+  --ink:#ffffff; --ink-dim:#aaaaaa;
+  --panel:#0f0f1f; --panel-alt:#0b0b1d;
+  --line:#444; --brand:#0078ff;
+}
+
+*{ box-sizing:border-box; }
+
+html, body{
+  margin:0; padding:0;
+  color:var(--ink);
+  font-family:"Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background:linear-gradient(to right, var(--bg1), var(--bg2));
+}
+
+/* ================== HEADER (barre) ================== */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  display:grid;
+  grid-template-columns: auto 1fr auto auto; /* photo | infos | menu | actions */
+  align-items:center;
+  gap:1.5rem;
+
+  background:#000010cc;
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:.6rem 1rem;
+}
+
+/* Photo */
+.corner-photo{
+  width:68px; height:85px; border-radius:50%;
+  object-fit:cover; border:2px solid #fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+
+/* Coordonnées (à droite de la photo) */
+.header-info{ font-size:.95rem; line-height:1.5; }
+.header-info p{ margin:.15rem 0; }
+.header-info a{ color:var(--brand); font-weight:600; text-decoration:none; }
+.header-info a:hover{ text-decoration:underline; }
+
+/* Menu */
+.main-nav{ display:flex; justify-content:center; }
+.main-nav ul{
+  display:flex; gap:2rem; list-style:none; margin:0; padding:0;
+}
+.main-nav a{ color:var(--ink); text-decoration:none; font-weight:600; }
+.main-nav a:hover{ text-decoration:underline; }
+
+/* Actions à droite (liens sociaux au-dessus, langue dessous) */
+.header-actions{
+  display:flex; flex-direction:column; align-items:flex-end; gap:.6rem;
+}
+.social-links{ display:flex; gap:.5rem; }
+.social-links a{
+  background:var(--brand); color:#fff; text-decoration:none;
+  padding:.4rem .8rem; border-radius:6px; font-weight:700;
+}
+.social-links a:hover{ filter:brightness(1.1); }
+
+#lang-switch{ display:flex; gap:.4rem; }
+#lang-switch button{
+  background:var(--brand); color:#fff; border:none;
+  padding:.35rem .7rem; border-radius:6px; font-weight:700; cursor:pointer;
+}
+#lang-switch button.active{ outline:2px solid #fff; }
+
+/* ================== HERO ================== */
+.hero-wrap{
+  max-width:1100px; margin:0 auto;
+  padding:2rem 1rem;
+}
+.hero-wrap h2{
+  margin:0;
+  font-size:clamp(1.1rem, 1.8vw + .9rem, 1.6rem);
+  line-height:1.6; font-weight:600;
+}
+.hero-wrap h2 span{
+  font-weight:800; text-decoration:underline; text-underline-offset:4px;
+}
+
+/* ================== Sections & cartes ================== */
+section{ padding:2rem 1rem; }
+
+#skills, #education, #experience, #academic-projects, #personal-projects, #courses{
+  max-width:1100px; margin:0 auto;
+}
+#skills h2, #education h2, #experience h2, #academic-projects h2, #personal-projects h2, #courses h2{
+  margin:0 0 1rem 0;
+  font-size:clamp(1.4rem, 2.5vw + .6rem, 1.8rem);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:1.2rem;
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:1.1rem 1.2rem;
+}
+.card h3{ margin:0 0 .6rem 0; font-size:1.1rem; }
+.card p, .card ul{
+  margin:.3rem 0; font-size:.97rem; color:#f4f4f8; line-height:1.5;
+}
+.card ul{ padding-left:1.2rem; }
+
+a.button{
+  display:inline-block; margin-top:.7rem;
+  background:var(--brand); color:#fff; text-decoration:none;
+  padding:.55rem 1rem; border-radius:6px; font-weight:700;
+}
+a.button:hover{ filter:brightness(1.05); }
+
+/* ================== Footer ================== */
+footer{
+  text-align:center; padding:2rem 1rem;
+  background:var(--panel-alt); color:var(--ink-dim);
+  margin-top:2rem;
+}
+
+/* placeholder (la visibilité FR/EN est gérée en JS) */
+.lang{}
+
+/* ================== Responsive ================== */
+/* 1) Réduction progressive : le menu prend plus de place */
+@media (max-width: 1100px){
+  .site-header{
+    grid-template-columns: auto auto 1fr auto; /* photo | infos | menu | actions */
+    gap:1rem;
+  }
+  .main-nav ul{ gap:1.2rem; }
+}
+
+/* 2) Tablette : empiler infos + menu si besoin */
+@media (max-width: 860px){
+  .site-header{
+    grid-template-columns: auto 1fr auto;   /* photo | bloc central | actions */
+    grid-template-areas:
+      "photo center actions";
+  }
+  .corner-photo{ grid-area: photo; }
+  .header-info{ grid-area: center; }
+  .main-nav{ grid-area: center; margin-top:.35rem; }
+  .header-actions{ grid-area: actions; }
+  .header-info{ margin-bottom:.25rem; }
+  .main-nav{ justify-content:flex-start; }
+}
+
+/* 3) Mobile : tout en colonne, propre et lisible */
+@media (max-width: 640px){
+  .site-header{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap:.6rem;
+    align-items:flex-start;
+  }
+  .header-actions{ align-items:flex-start; }
+  .social-links{ flex-wrap:wrap; }
+  .main-nav ul{ gap:1rem; flex-wrap:wrap; }
+}
