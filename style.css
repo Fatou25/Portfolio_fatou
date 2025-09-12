@@ -85,10 +85,13 @@ html, body{
 /* ================== Sections & cartes ================== */
 section{ padding:2rem 1rem; }
 
-#skills, #education, #experience, #academic-projects, #personal-projects, #courses{
+/* Limite la largeur des sections de contenu */
+#skills, #education, #experience, #academic-projects, #personal-projects, #courses, #certificats{
   max-width:1100px; margin:0 auto;
 }
-#skills h2, #education h2, #experience h2, #academic-projects h2, #personal-projects h2, #courses h2{
+
+/* Titres de section homogènes */
+#skills h2, #education h2, #experience h2, #academic-projects h2, #personal-projects h2, #courses h2, #certificats h2{
   margin:0 0 1rem 0;
   font-size:clamp(1.4rem, 2.5vw + .6rem, 1.8rem);
 }
@@ -98,13 +101,16 @@ section{ padding:2rem 1rem; }
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:1.2rem;
 }
+
 .card{
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:12px;
   padding:1.1rem 1.2rem;
 }
+
 .card h3{ margin:0 0 .6rem 0; font-size:1.1rem; }
+
 .card p, .card ul{
   margin:.3rem 0; font-size:.97rem; color:#f4f4f8; line-height:1.5;
 }
@@ -117,6 +123,26 @@ a.button{
 }
 a.button:hover{ filter:brightness(1.05); }
 
+/* ===== Titre + bouton sur la même ligne (certificats, etc.) ===== */
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+}
+.card-header h3{
+  margin:0;           /* on annule le margin-top par défaut */
+  font-size:1.1rem;
+  flex:1;             /* prend l’espace restant et pousse le bouton à droite */
+}
+.card-actions{
+  display:flex; gap:.5rem;
+}
+.card-actions .button{
+  margin-top:0;       /* pas de marge verticale pour rester aligné au titre */
+  white-space:nowrap; /* évite le retour à la ligne du libellé du bouton */
+}
+
 /* ================== Footer ================== */
 footer{
   text-align:center; padding:2rem 1rem;
@@ -124,11 +150,10 @@ footer{
   margin-top:2rem;
 }
 
-/* placeholder (la visibilité FR/EN est gérée en JS) */
+/* Visibilité FR/EN gérée en JS */
 .lang{}
 
 /* ================== Responsive ================== */
-/* 1) Réduction progressive : le menu prend plus de place */
 @media (max-width: 1100px){
   .site-header{
     grid-template-columns: auto auto 1fr auto; /* photo | infos | menu | actions */
@@ -137,12 +162,10 @@ footer{
   .main-nav ul{ gap:1.2rem; }
 }
 
-/* 2) Tablette : empiler infos + menu si besoin */
 @media (max-width: 860px){
   .site-header{
     grid-template-columns: auto 1fr auto;   /* photo | bloc central | actions */
-    grid-template-areas:
-      "photo center actions";
+    grid-template-areas: "photo center actions";
   }
   .corner-photo{ grid-area: photo; }
   .header-info{ grid-area: center; }
@@ -152,7 +175,6 @@ footer{
   .main-nav{ justify-content:flex-start; }
 }
 
-/* 3) Mobile : tout en colonne, propre et lisible */
 @media (max-width: 640px){
   .site-header{
     grid-template-columns: 1fr;
@@ -163,4 +185,13 @@ footer{
   .header-actions{ align-items:flex-start; }
   .social-links{ flex-wrap:wrap; }
   .main-nav ul{ gap:1rem; flex-wrap:wrap; }
+}
+
+/* Quand l’écran est très étroit, on empile titre + bouton proprement */
+@media (max-width: 480px){
+  .card-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .card-actions{ width:100%; }
 }
