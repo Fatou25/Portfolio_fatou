@@ -195,3 +195,28 @@ footer{
   }
   .card-actions{ width:100%; }
 }
+
+.card .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.card .card-link h3 { margin: 0 0 .5rem; }
+.card .card-link:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Titres cliquables dans les cartes projets */
+.card .card-link h3 {
+  color: #4da6ff; /* bleu accentué */
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card .card-link:hover h3 {
+  color: #1e90ff; /* bleu plus vif au hover */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
